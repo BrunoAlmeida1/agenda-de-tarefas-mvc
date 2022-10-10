@@ -1,0 +1,73 @@
+@model IEnumerable<TrilhaApiDesafio.Models.Tarefa>
+
+@{
+    ViewData["Title"] = "Tarefas Por Status";
+}
+
+<h2>Tarefas Por Status</h2>
+<br>
+@using (Html.BeginForm())
+{
+<div class="row">
+    <div class="col-md-4">
+        <label for="status">Status</label><br>
+        <select name="status" id="status">
+            <option value="Pendente">Pendente</option>
+            <option value="Finalizado">Finalizado</option>
+        </select>
+        <br><br>
+        <button type="submit">Pesquisar</button>
+    </div>
+</div>
+}
+<br>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Titulo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descricao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Data)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            if(Model != null){
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(model => item.Id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => item.Titulo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => item.Descricao)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => item.Data)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => item.Status)
+                        </td>
+                    </tr>
+                }
+            }
+        }
+    </tbody>
+</table>
+
+<a asp-action="Pesquisar">Voltar</a>

@@ -1,0 +1,35 @@
+html {
+  font-size: 18px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+a {
+  color: brown;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+a:hover {
+  color: blueviolet;
+}
+
+ul {
+  list-style-type: none;
+}
+li{
+  font-size: 20px;
+}

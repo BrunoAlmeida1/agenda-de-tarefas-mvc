@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Início";
+}
+
+<div class="text-center">
+    <h1 class="display-4" style="font-weight: 400;">Gerenciador de Tarefas</h1>
+    <br>
+    <ul>
+        <li>
+            <a asp-controller="Tarefa" asp-action="ObterTodos">Lista de tarefas</a>
+        </li>
+        <li>
+            <a asp-controller="Tarefa" asp-action="Criar">Criar tarefa</a>
+        </li>
+        <li>
+            <a asp-controller="Tarefa" asp-action="Pesquisar">Pesquisar</a>
+        </li>
+    </ul>
+</div>
